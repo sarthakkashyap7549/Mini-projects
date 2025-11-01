@@ -1,29 +1,3 @@
-# from transformers import BertTokenizer, BertForSequenceClassification
-# import torch
-
-# # Load the trained model and tokenizer
-# model_path = "D:/Myprograms/fake_news_sniffer/model"
-# tokenizer = BertTokenizer.from_pretrained(model_path)
-# model = BertForSequenceClassification.from_pretrained(model_path)
-
-# # Function to predict fake/real news
-# def predict_news(text):
-#     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128)
-#     outputs = model(**inputs)
-#     logits = outputs.logits
-#     predicted_class = torch.argmax(logits, dim=1).item()
-
-#     if predicted_class == 0:
-#         print("📰 Prediction: FAKE NEWS ❌")
-#     else:
-#         print("🗞️ Prediction: REAL NEWS ✅")
-
-# # Try a few examples
-# while True:
-#     user_input = input("\nEnter a news headline or paragraph (or 'exit' to quit): ")
-#     if user_input.lower() == "exit":
-#         break
-#     predict_news(user_input)
 import torch
 # Use the DistilBERT classes, as this is the model you successfully trained/saved.
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
@@ -98,5 +72,6 @@ while True:
         continue
 
     predict_news(user_input)
+
 
 print("\n--- Program finished ---")
